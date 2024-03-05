@@ -57,3 +57,13 @@ Execute GRIB downloader:
   ./_build/default/main.exe one -base-url aws-mirror -directory ../grib `date +%Y%m%d00`
   ```
 This may take a while.
+# Step 12: 
+Change back into base folder:
+  ```
+  cd ..
+  ```
+# Step 13:
+Start the servers:
+  ```
+  docker-compose up
+  ```
