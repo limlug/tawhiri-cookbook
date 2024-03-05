@@ -1,0 +1,20 @@
+services:
+  tawhiri:
+    image: tawhiri:latest
+    container_name: tawhiri
+    build: ./tawhiri
+    ports:
+      - "8000:8000"
+    environment:
+      ELEVATION_API: http://open_elevation:8080
+    volumes:
+      - "./grib:/grib"
+    
+  open_elevation:
+    image: open_elevation:latest
+    container_name: open_elevation
+    build: ./open-elevation
+    expose:
+      - "8080"
+    volumes:
+      - "./data:/data"
